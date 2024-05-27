@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="sortcut icon" href="logo/home stay logo.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Home Stay</title>
+
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+
+        body{
+            justify-content: center;
+        }
+        h2{
+            text-align: center;
+            background-color: rgb(141, 83, 168);
+            font-weight: bolder;
+            height: 60px;
+            font-size: 40px;
+            margin: 10px 0px;
+        }
+
+        label{
+            justify-content: center;
+            display: flex;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .form_reg{
+            justify-content: center;
+            display: flex;
+            margin-top: 5px;
+            height: fit-content;
+
+        }
+
+        .field{
+            justify-content: center;
+            display: flex;
+            width: 60vh;
+            height: 20px;
+            border-radius: 5px;
+        }
+        .roooom{
+            text-align: left;
+            font-weight: bold;
+            width: 30vh;
+            margin-top: 5px;
+            margin-left: 120px;
+            border-radius: 5px;
+        }
+        .reg{
+            font-size: 20px;
+            width: 30vh;
+            justify-content: center;
+            color: rgb(124, 74, 170);
+            border-radius: 10px;
+            margin-left: 120px;
+        }
+        .pay{
+            display: flex;
+            align-items: center;
+            margin-left: 120px;
+            justify-content: space-between;
+            padding-right: 120px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h2>Registration </h2>
+    <div class="form_reg">
+    <form action="register.php" method="post">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="field"required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"  class="field" required><br><br>
+        
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile"  class="field" required><br><br>
+        
+        <label for="arrival_date">Arrival Date:</label>
+        <input type="date" id="arrival_date" name="arrival_date"  class="field" required><br>
+        
+        <label for="number_of_guests">Number of Guests:</label>
+        <input type="number" id="number_of_guests" name="number_of_guests"  class="field" required><br>
+        
+        <label for="Room_Type">Room Type:</label>
+        <select id="Room_type" name= "Room_Type" class="roooom">
+        <option value="SINGLE ROOMS">SINGLE ROOMS</option>
+        <option value="DOUBLE ROOMS">DOUBLE ROOMS</option>
+        <option value="TWIN ROOMS">TWIN ROOMS</option>
+        <option value="EN-SUITE ROOMS">EN-SUITE ROOMS</option>
+        <option value="FAMILY ROOMS">FAMILY ROOMS</option>
+        <option value="ENTIRE HOME">ENTIRE HOME</option>
+        <option value="DORMITORY ROOMS">DORMITORY ROOMS</option>
+        </select>
+        <br><br>
+
+        <label for="Special_req">Special req:</label>
+        <input type="text" id="Special_req" name="Special_req"  class="field" ><br><br>
+
+        <label for="Payment_Option">Payment Option:</label>
+       <div class="pay">
+        <input type="radio" id="Payment_Option1" name="Payment_Option" value="UPI"   required>
+        <label for="Payment_Option1">UPI</label>
+        <input type="radio" id="Payment_Option2" name="Payment_Option" value="Cash"  required>
+        <label for="Payment_Option2">Cash</label></div><br>
+
+        <input type="submit"  value="Register" class="reg">
+    </form>
+    </div>
+    
+</body>
+</html>

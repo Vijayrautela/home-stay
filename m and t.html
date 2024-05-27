@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .spinner {
+            margin: 26vh 100vh;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #310ecd; /* Change color as needed */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+}
+
+p{
+    text-align: center;
+    font-size: 90px;
+}
+
+.btn{
+    margin: 30vh 100vh;
+    width: 110px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="spinner"></div>
+    <p>Coming Soon......</p>
+
+    <button class="btn"> <a href="index.html">Go Back</a></button>
+</body>
+</html>
