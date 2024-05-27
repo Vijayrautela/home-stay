@@ -26,13 +26,12 @@ $Payment_Option = $_POST['Payment_Option'];
 $sql = "INSERT INTO registrations (name, email, mobile, arrival_date, number_of_guests, Room_Type, Special_req, Payment_Option) VALUES ('$name', '$email', '$mobile', '$arrival_date', '$number_of_guests', '$Room_Type', '$Special_req', '$Payment_Option')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Thank you for registration";
+    echo "<script>alert('Thank you for registration');</script>";
+   echo "<script>window.location.href='index.html';</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
 
-header("location: index.html");
-exit();
 ?>
