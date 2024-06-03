@@ -92,10 +92,10 @@
         .popup-content {
            justify-content: space-evenly;
             display: flex;
-            background-color: #fefefe;
+            background-color: #d6d2d2;
             margin: 40px ; /* 15% from the top and centered */
             padding: 20px;
-            border: 1px solid #888;
+            border: 1px solid #9538b5;
             /* width: 50%; Could be more or less, depending on screen size */
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
@@ -144,6 +144,7 @@
             margin-top: 32px;
             margin-left: -30px;
             border: 1px solid rgb(90, 85, 85);
+            background-color: rgb(55, 213, 37);
             border-radius: 5px;
         }
 
@@ -212,6 +213,7 @@
         <input type="number" id="numGuests" min="1" onchange="calculateTotal()">
         <h3>Select Room Type:</h3>
         <form id="packageForm" class="fom">
+            
             <input type="radio" id="Single" name="package" value="Single" onclick="calculateTotal()"> Single Rooms (₹80/night)<br>
             <input type="radio" id="Double" name="package" value="Double" onclick="calculateTotal()"> Double Room (₹120/night)<br>
             <input type="radio" id="Twin" name="package" value="Twin" onclick="calculateTotal()"> Twin Room (₹120/night)<br>
@@ -220,6 +222,7 @@
             <input type="radio" id=" Entire" name="package" value="Entire" onclick="calculateTotal()"> Entire Home (₹800/night)<br>
             <input type="radio" id="Studios" name="package" value="Studios" onclick="calculateTotal()"> Studios Rooms (₹200/night)<br>
             <input type="radio" id=" Dormitory" name="package" value="Dormitory" onclick="calculateTotal()"> Dormitory Rooms (₹350/night)
+            
         </form>
         <div class="sp">
         <h3>Select Package:</h3>
