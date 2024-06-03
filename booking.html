@@ -25,7 +25,7 @@
 
         label{
             justify-content: center;
-            display: flex;
+            /* display: flex; */
             font-family: sans-serif;
             font-weight: bold;
         }
@@ -56,10 +56,12 @@
         .reg{
             font-size: 20px;
             width: 30vh;
+            height: 5vh;
             justify-content: center;
             color: rgb(124, 74, 170);
             border-radius: 10px;
-            margin-left: 120px;
+            margin-top: 75vh;
+            margin-left: -37vh;
         }
         .pay{
             display: flex;
@@ -67,6 +69,87 @@
             margin-left: 120px;
             justify-content: space-between;
             padding-right: 120px;
+        }
+
+
+          /* Styles for the popup */
+          .popup {
+            justify-content: center;
+            display: none;
+             /* Hidden by default */
+             position: fixed;
+            z-index: 1; /* Sit on top */
+            left: 80px;
+            top: 0;
+            width: 60%; /* Full width */
+            height: 50%; /* Full height */
+            /* overflow: auto; Enable scroll if needed */
+            /* background-color: rgba(0,0,0,0.4); /* Black with opacity */
+            margin: 180px;
+        }
+
+        /* Content of the popup */
+        .popup-content {
+           justify-content: space-evenly;
+            display: flex;
+            background-color: #fefefe;
+            margin: 40px ; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            /* width: 50%; Could be more or less, depending on screen size */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .popup-content img{
+            float: left;
+            height: 40vh;
+            width: 40vh;
+        }
+
+    
+        /* Close button */
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .pop-right{
+            padding-left: 30px;
+            font-family: sans-serif;
+        }
+
+        form .fom{
+            display: flex;
+        }
+        .sp{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .con{
+            justify-content: center
+        }
+
+        .pay-button{
+            height: 30px;
+            width: 120px;
+            margin-top: 32px;
+            margin-left: -30px;
+            border: 1px solid rgb(90, 85, 85);
+            border-radius: 5px;
+        }
+
+        .pay-button:hover{
+            color: black;
+            background-color: rgb(130, 71, 185);
         }
 
         
@@ -108,15 +191,65 @@
         <input type="text" id="Special_req" name="Special_req"  class="field" ><br><br>
 
         <label for="Payment_Option">Payment Option:</label>
-       <div class="pay">
-        <input type="radio" id="Payment_Option1" name="Payment_Option" value="UPI"   required>
-        <label for="Payment_Option1">UPI</label>
-        <input type="radio" id="Payment_Option2" name="Payment_Option" value="Cash"  required>
-        <label for="Payment_Option2">Cash</label></div><br>
+        <div class="pay"> 
+        <!-- The popup -->
+<div id="popup" class="popup">
+    <!-- Popup content -->
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <img src="images/upi.jpeg">
+      <div class="pop-right">
+
+        <!-- <h3>Select Room Type:</h3> -->
+        <div id="roomType" onchange="calculateTotal()">
+            <!-- <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Twin">Twin</option> -->
+            <!-- Add more room types if needed -->
+        </div>
+        <div class="fo">
+        <h3>Number of Guests:</h3>
+        <input type="number" id="numGuests" min="1" onchange="calculateTotal()">
+        <h3>Select Room Type:</h3>
+        <form id="packageForm" class="fom">
+            <input type="radio" id="Single" name="package" value="Single" onclick="calculateTotal()"> Single Rooms (₹80/night)<br>
+            <input type="radio" id="Double" name="package" value="Double" onclick="calculateTotal()"> Double Room (₹120/night)<br>
+            <input type="radio" id="Twin" name="package" value="Twin" onclick="calculateTotal()"> Twin Room (₹120/night)<br>
+            <input type="radio" id="En-Suite" name="package" value="En-Suite" onclick="calculateTotal()">  En-Suite Rooms (₹150/night)<br>
+            <input type="radio" id="Family" name="package" value="Family" onclick="calculateTotal()"> Family Rooms (₹200/night)<br>
+            <input type="radio" id=" Entire" name="package" value="Entire" onclick="calculateTotal()"> Entire Home (₹800/night)<br>
+            <input type="radio" id="Studios" name="package" value="Studios" onclick="calculateTotal()"> Studios Rooms (₹200/night)<br>
+            <input type="radio" id=" Dormitory" name="package" value="Dormitory" onclick="calculateTotal()"> Dormitory Rooms (₹350/night)
+        </form>
+        <div class="sp">
+        <h3>Select Package:</h3>
+      
+        <p id="totalPricePerNight">₹0</p>
+        <p id="totalPricePerWeek">₹0</p>
+        <p id="totalPricePerMonth">₹0</p>
+        <br><br><br>
+
+        <button class="pay-button" onclick="pay()"> Pay</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+  
+  <!-- Radio input for Pay Now -->
+  <input type="radio" id="Payment_Option1" name="Payment_Option" value="Pay Now" onclick="openPopup()" required>
+  <label for="Payment_Option1">Pay Now:</label>
+  
+    
+         <input type="radio" id="Payment_Option2" name="Payment_Option" value="Pay Later"  required>
+        <label for="Payment_Option2">Pay Later</label></div><br>
+       
 
         <input type="submit"  value="Register" class="reg">
+     </div>
+</div>
     </form>
-    </div>
-    
+   
+    <script src="js/pop.js"></script>
 </body>
 </html>
