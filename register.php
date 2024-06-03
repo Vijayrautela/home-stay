@@ -32,5 +32,9 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+<<<<<<< HEAD
 $conn->close();
 ?>
+=======
+$conn->close();?>
+>>>>>>> 6ffc69d1c3f7746ab2dd284e9030ae68bd3ad79e
